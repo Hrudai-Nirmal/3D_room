@@ -1,4 +1,4 @@
-﻿import { useRef } from 'react';
+import { useRef } from 'react';
 import Spline from '@splinetool/react-spline';
 import { useNavigate } from 'react-router-dom';
 import type { Application } from '@splinetool/runtime';
