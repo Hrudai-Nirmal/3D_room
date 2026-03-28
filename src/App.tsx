@@ -12,7 +12,8 @@ function App() {
     splineRef.current = splineApp;
   }
 
-  function onSplineMouseDown(e: import('@splinetool/runtime').SplineEvent) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  function onSplineMouseDown(e: any) {
     console.log('Clicked object:', e.target.name);
     
     switch (e.target.name) {
