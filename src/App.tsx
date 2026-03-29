@@ -12,10 +12,8 @@ function App() {
   function onLoad(splineApp: Application) {
     splineRef.current = splineApp;
     const camera = splineApp.findObjectByName('Camera');
-    if (camera) {
-      // @ts-ignore
-      splineApp.setCamera(camera);
-    }
+    
+    console.log('Spline loaded, camera:', !!camera, splineApp);
     setIsLoading(false);
   }
 
@@ -54,3 +52,4 @@ function App() {
 }
 
 export default App;
+
