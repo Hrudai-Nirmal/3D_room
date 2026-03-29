@@ -12,10 +12,10 @@ function App() {
     splineRef.current = splineApp;
     const camera = splineApp.findObjectByName('Camera');
     if (camera) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment`n      // @ts-ignore`n      splineApp.setCamera(camera);
+      // @ts-ignore
+      splineApp.setCamera(camera);
     }
   }
-
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function onSplineMouseDown(e: any) {
     console.log('Clicked object:', e.target.name);
