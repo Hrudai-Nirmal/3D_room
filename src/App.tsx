@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+﻿import { useRef } from 'react';
 import Spline from '@splinetool/react-spline';
 import { useNavigate } from 'react-router-dom';
 import type { Application } from '@splinetool/runtime';
@@ -10,6 +10,10 @@ function App() {
 
   function onLoad(splineApp: Application) {
     splineRef.current = splineApp;
+    const camera = splineApp.findObjectByName('Camera');
+    if (camera) {
+      splineApp.setCamera(camera);
+    }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
