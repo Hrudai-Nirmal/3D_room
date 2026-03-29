@@ -12,7 +12,7 @@ function App() {
     splineRef.current = splineApp;
     const camera = splineApp.findObjectByName('Camera');
     if (camera) {
-      splineApp.setCamera(camera);
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment`n      // @ts-ignore`n      splineApp.setCamera(camera);
     }
   }
 
