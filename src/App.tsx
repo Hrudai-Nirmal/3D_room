@@ -43,7 +43,7 @@ function App() {
     <div className='awwwards-container'>
       {isLoading && <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 10 }}>Loading 3D Scene...</div>}
       <Spline
-        scene='https://prod.spline.design/kDWilwAJfnuMKvMhOU5RCFs5/scene.splinecode'
+        scene='https://prod.spline.design/rjCTjApLHAbgYZ1B/scene.splinecode'
         onLoad={onLoad}
         onMouseDown={onSplineMouseDown}
       />
