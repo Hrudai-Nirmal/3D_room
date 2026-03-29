@@ -1,4 +1,4 @@
-﻿import { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 import { useNavigate } from 'react-router-dom';
 import type { Application } from '@splinetool/runtime';
@@ -25,13 +25,27 @@ function App() {
       case 'macBook': navigate('/portfolio'); break;
       case 'Book': navigate('/cv'); break;
       case 'phone': navigate('/contact'); break;
-      case 'Retro Loudspeaker': console.log('Plays random music'); break;
+      case 'Retro Loudspeaker': {
+        const sounds = [
+          'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+          'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+          'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3'
+        ];
+        const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+        const audio = new Audio(randomSound);
+        audio.play().catch(err => console.error('Audio play failed:', err));
+        console.log('Playing random music:', randomSound);
+        break;
+      }
       case 'object_guitar': navigate('/guitar'); break;
       case 'BMO': navigate('/game'); break;
       case 'lamp_office': {
         if (splineRef.current) {
-          const mainLight = splineRef.current.findObjectByName('Main_light');
-          if (mainLight) { console.log(mainLight); }
+          const mainLight = splineRef.current.findObjectByName('Main_light') as any;
+          if (mainLight) { 
+             mainLight.visible = !mainLight.visible;
+             console.log('Toggled light visibility to:', mainLight.visible); 
+          }
         }
         break;
       }
@@ -52,4 +66,3 @@ function App() {
 }
 
 export default App;
-
